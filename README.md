@@ -1,6 +1,6 @@
-# spa
+# vue-newsfeed
 
-> A Vue.js single page application project using vue-router by samuelayo
+> A Vue.js single page news feed application.
 
 ## Build Setup
 
