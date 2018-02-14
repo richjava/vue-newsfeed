@@ -4,11 +4,15 @@
 import Vue from 'vue'
 //import the vue router
 import VueRouter from 'vue-router'
+//import the vue resource
+import VueResource from 'vue-resource'
 
 //import the App component
 import App from './App'
 //tell Vue to use the router
 Vue.use(VueRouter)
+//tell Vue to use the resource
+Vue.use(VueResource)
 
 import Hello from './components/Hello'
 import About from './components/About'
