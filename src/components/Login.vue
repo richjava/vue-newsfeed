@@ -1,33 +1,27 @@
 <template>
   <div>
-    This is the Login page.
+    <h3>Sign In</h3>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'login'
-}
+  //import firebase from 'firebase'
+  export default {
+    name: 'login',
+    data: function() {
+      return {
+        email: '',
+        password: ''
+      }
+    },
+    methods: {
+      signIn: function() {
+  
+      }
+    }
+  }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+<style scoped>  /* "scoped" attribute limit the CSS to this component only */
+  
 </style>

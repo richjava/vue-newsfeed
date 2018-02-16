@@ -1,6 +1,5 @@
 <template>
   <div class="source-selection">
-    <div>
       <div class="jumbotron">
         <h2>
           <span class="glyphicon glyphicon-list-alt"></span>&nbsp;News List
@@ -11,7 +10,6 @@
           <option v-for="source in sources" v-bind:value="source.id">{{ source.name }}</option>
         </select>
       </div>
-    </div>
   </div>
 </template>
 
@@ -38,7 +36,6 @@ export default {
     this.$http.get('https://newsapi.org/v2/sources?apiKey=490cb422b79149ae85bdf2b85d62a848')
       .then(response => {
         this.sources = response.body.sources;
-        //console.log('sources response',response)
       });
   }
 }
@@ -46,22 +43,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

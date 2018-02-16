@@ -13,7 +13,7 @@ export default {
   name: 'app'
 }
 </script>
-<!-- styling for the component -->
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -22,5 +22,28 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h1 {
+  color: #42b983;
+}
+
+.media-object {
+  width: 128px;
+  padding: 10px;
+}
+
+.media {
+  border-top: 1px solid lightgray;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.media .glyphicon {
+  color: #ccc;
+}
+
+a {
+  color: #42b983;
 }
 </style>

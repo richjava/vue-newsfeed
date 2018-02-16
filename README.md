@@ -1,6 +1,21 @@
 # vue-newsfeed
 
-> A Vue.js single page news feed application.
+> A Vue.js single page news feed application with partial favourites functionality. The news feed is getting articles from NewsAPI and the favourites are coming from a Firebase database.
+
+The app demonstates use of Vue components, vue-router, vue-resource, 
+
+## TODO
+The News Feed should remember which articles have been favourited.
+and the collections are currently not synced with each other.
+
+## Getting started
+You will need a db.js file in the app directory:
+
+````
+import Firebase from 'firebase'
+const firebaseApp = Firebase.initializeApp({<YOUR_FIREBASE_DB_CONFIG_GOES_HERE>});
+export const db = firebaseApp.database();
+````
 
 ## Build Setup
 

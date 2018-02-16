@@ -1,6 +1,11 @@
 <template>
   <div class="newslist">
     <div class="container">
+      <div class="jumbotron">
+        <h2>
+          <span class="glyphicon glyphicon-heart"></span>&nbsp;Favourites
+        </h2>
+      </div>
       <ul class="media-list">
         <li class="media" v-for="article in articles">
           <div class="media-left">
@@ -18,7 +23,7 @@
             <p>{{ article.description }}</p>
           </div>
           <div class="media-right">
-            <span class="glyphicon glyphicon-heart" v-on:click="addFavourite(article, $event)"></span>
+            <span class="glyphicon glyphicon-remove" v-on:click="removeFavourite(article, $event)"></span>
           </div>
         </li>
       </ul>
@@ -30,33 +35,18 @@
 import { db } from '../db'
 
 export default {
-  name: 'newslist',
-  props: ['source'],
-  data() {
-    return {
-      articles: []
+  name: 'favouriteslist',
+  firebase: {
+    articles: {
+      source: db.ref('articles'),
+      cancelCallback(err) {
+        console.log(err);
+      }
     }
   },
   methods: {
-    updateSource: function(source) {
-      if (source) {
-        this.$http.get('https://newsapi.org/v2/top-headlines?sources=' + source + '&apiKey=490cb422b79149ae85bdf2b85d62a848')
-          .then(response => {
-            this.articles = response.body.articles;
-          });
-      }
-    },
-    addFavourite: function(article, evt) {
-      db.ref('articles').push(article)
-      evt.target.style.visibility = 'hidden';//hide heart icon
-    },
-  },
-  created: function() {
-    this.updateSource(this.source);
-  },
-  watch: {
-    source: function(val) {
-      this.updateSource(val);
+    removeFavourite: function(article, evt) {
+      db.ref('articles').child(article['.key']).remove()
     }
   }
 }

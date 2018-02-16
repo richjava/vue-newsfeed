@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <p>This is the Admin page</p>
+    <div>
+      <h3>Admin</h3>
+    </div>
     <router-link v-bind:to="'/admin'">Posts</router-link>
     <router-link v-bind:to="'/admin/comments'">Comments</router-link>
     <router-view></router-view>
@@ -14,10 +16,10 @@ export default {
   name: 'admin',
   data() {
     return {
-      loggedIn: false
+      loggedIn: true
     }
-  }, created: function(){
-    if(!this.loggedIn){
+  }, created: function() {
+    if (!this.loggedIn) {
       this.$router.push('/login')
     }
   }
@@ -26,21 +28,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
