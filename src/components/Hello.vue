@@ -50,5 +50,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.tab-pane{
+  padding-top:20px;
+}
 </style>

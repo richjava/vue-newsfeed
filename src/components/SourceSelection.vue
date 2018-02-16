@@ -1,5 +1,5 @@
 <template>
-  <div class="source-selection">
+  <div class="container source-selection">
       <div class="jumbotron">
         <h2>
           <span class="glyphicon glyphicon-list-alt"></span>&nbsp;News List
