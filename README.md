@@ -2,7 +2,7 @@
 
 > A Vue.js single page news feed application with partial favourites functionality. The news feed is getting articles from NewsAPI and the favourites are coming from a Firebase database.
 
-The app demonstates use of Vue components, vue-router, vue-resource, 
+The app demonstates use of Vue components, vue-router, vue-resource and vuefire (Firebase).
 
 ## TODO
 The News Feed should remember which articles have been favourited.
